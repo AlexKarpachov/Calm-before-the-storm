@@ -7,9 +7,14 @@ public class Inventory : MonoBehaviour
 
     [Header ("Resources amount")]
     [SerializeField] TextMeshProUGUI axeAmount;
+    [SerializeField] TextMeshProUGUI pickAxeAmount;
+    [SerializeField] TextMeshProUGUI hammerAmount;
     [SerializeField] TextMeshProUGUI woodAmount;
+    [SerializeField] TextMeshProUGUI ironAmount;
     [SerializeField] TextMeshProUGUI ropeAmount;
-    [SerializeField] TextMeshProUGUI nailsAmount;
+    [SerializeField] TextMeshProUGUI bushAmount;
+    [SerializeField] TextMeshProUGUI foodAmount;
+    [SerializeField] TextMeshProUGUI waterAmount;
 
     [System.Serializable]
     class InventorySlots
@@ -49,14 +54,29 @@ public class Inventory : MonoBehaviour
                 case InventoryType.Axe:
                     axeAmount.text = slots.inventoryAmount.ToString();
                     break;
+                case InventoryType.Pickaxe:
+                    pickAxeAmount.text = slots.inventoryAmount.ToString();
+                    break;
+                case InventoryType.Hammer:
+                    hammerAmount.text = slots.inventoryAmount.ToString();
+                    break;
                 case InventoryType.Wood:
-                    woodAmount.text = slots.inventoryAmount.ToString();
+                    woodAmount.text = slots.inventoryAmount.ToString() + "/50";
+                    break;
+                case InventoryType.Iron:
+                    ironAmount.text = slots.inventoryAmount.ToString();
                     break;
                 case InventoryType.Rope:
-                    ropeAmount.text = slots.inventoryAmount.ToString();
+                    ropeAmount.text = slots.inventoryAmount.ToString() + "/200";
                     break;
-                case InventoryType.Nails:
-                    nailsAmount.text = slots.inventoryAmount.ToString();
+                case InventoryType.Bush:
+                    bushAmount.text = slots.inventoryAmount.ToString();
+                    break;
+                case InventoryType.Food:
+                    foodAmount.text = slots.inventoryAmount.ToString() + "/100";
+                    break;
+                case InventoryType.Water:
+                    waterAmount.text = slots.inventoryAmount.ToString() + "/100";
                     break;
                     // New resources may be added here
             }

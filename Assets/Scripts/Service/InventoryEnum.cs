@@ -1,10 +1,12 @@
 public enum InventoryType
 {
     Axe,
+    Hammer,
+    Pickaxe,
     Wood,
+    Iron,
     Rope,
-    Nails,
+    Bush,
     Food,
     Water,
-    Animals
 }

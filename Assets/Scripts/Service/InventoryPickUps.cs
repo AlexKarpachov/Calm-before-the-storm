@@ -13,4 +13,12 @@ public class InventoryPickUps : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            FindObjectOfType<Inventory>().IncreaseCurrentInventory(inventoryType, ammoAmount);
+            Destroy(gameObject);
+        }
+    }*/
 }
