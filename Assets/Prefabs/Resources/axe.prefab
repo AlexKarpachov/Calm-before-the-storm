@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e24859a87f726fb46bdef9ca3c5ca263, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e24859a87f726fb46bdef9ca3c5ca263, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e24859a87f726fb46bdef9ca3c5ca263, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e24859a87f726fb46bdef9ca3c5ca263, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e24859a87f726fb46bdef9ca3c5ca263, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.44
+      value: -0.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e24859a87f726fb46bdef9ca3c5ca263, type: 3}
       propertyPath: m_LocalPosition.z
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504c2b56a3f6c674f9a5dae38e2d9da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 1
+  itemAmount: 5
   inventoryType: 0
 --- !u!65 &3887364124213889488
 BoxCollider:
