@@ -20,9 +20,5 @@ public class CameraController : MonoBehaviour
 
         transform.position = targetPosition;
         transform.LookAt(player); 
-
-        /*Vector3 targetPosition = player.position + offset;
-        transform.position = targetPosition;
-        transform.rotation = Quaternion.Euler(30f, -45f, 0f); */
     }
 }

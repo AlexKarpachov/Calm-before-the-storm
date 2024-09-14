@@ -4,7 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float playerSpeed;
     [SerializeField] float rotationSpeed = 10f;
-    [SerializeField] float gravity = -9.81f; 
+    [SerializeField] float gravity = -9.81f;
     [SerializeField] float groundDistance = 0.4f;
     [SerializeField] float gravitySpeed;
     [SerializeField] Transform groundCheck;
@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] CharacterController controller;
 
     Vector3 velocity;
-    bool isGrounded;
     int isWalkingHash;
+    bool isGrounded;
+    bool isCutting = false;
+    bool isPickingUp = false;
+    bool isMining = false;
 
     private void Start()
     {
@@ -24,6 +27,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMovements();
+        HandleCutting();
+        HandlePickingUp();
+        HandleMining();
     }
 
     void PlayerMovements()
@@ -32,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f; 
+            velocity.y = -2f;
         }
 
         float moveX = Input.GetAxis("Horizontal");
@@ -65,4 +71,50 @@ public class PlayerController : MonoBehaviour
             animator.SetBool(isWalkingHash, false);
         }
     }
+
+    void HandleCutting()
+    {
+        if (Input.GetKeyDown(KeyCode.C) && !isCutting)
+        {
+            isCutting = true;
+            animator.SetBool("isCutting", true);
+
+        }
+        else if (Input.GetKeyUp(KeyCode.C) && isCutting)
+        {
+            isCutting = false;
+            animator.SetBool("isCutting", false);
+        }
+    }
+
+    void HandlePickingUp()
+    {
+        if (Input.GetKeyDown(KeyCode.Z) && !isPickingUp)
+        {
+            isPickingUp = true;
+            animator.SetBool("isPickingUp", true);
+
+        }
+        else if (Input.GetKeyUp(KeyCode.Z) && isPickingUp)
+        {
+            isPickingUp = false;
+            animator.SetBool("isPickingUp", false);
+        }
+    }
+
+    void HandleMining()
+    {
+        if (Input.GetKeyDown(KeyCode.X) && !isMining)
+        {
+            isMining = true;
+            animator.SetBool("isIronMining", true);
+
+        }
+        else if (Input.GetKeyUp(KeyCode.X) && isMining)
+        {
+            isMining = false;
+            animator.SetBool("isIronMining", false);
+        }
+    }
+
 }

@@ -13,6 +13,8 @@ TagManager:
   - Pickaxe
   - Hammer
   - Rope
+  - Lake
+  - Boat
   layers:
   - Default
   - TransparentFX
