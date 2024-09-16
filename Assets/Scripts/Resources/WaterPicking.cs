@@ -18,7 +18,7 @@ public class WaterPicking : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Lake"))
+        if (other.CompareTag("Lake") && !GameManager.DoomsdayHasStarted)
         {
             waterBucket.SetActive(true); 
             hasWater = true; 

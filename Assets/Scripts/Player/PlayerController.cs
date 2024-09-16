@@ -26,10 +26,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        PlayerMovements();
-        HandleCutting();
-        HandlePickingUp();
-        HandleMining();
+        if (transform.position.y <= 0)
+        {
+            controller.enabled = false; 
+            transform.position = new Vector3(511f, 20f, 148f);
+            controller.enabled = true; 
+            return; 
+        }
+
+        if (!PlayerOnBoatMover.playerIsOnBoat)
+        {
+            PlayerMovements();
+            HandleCutting();
+            HandlePickingUp();
+            HandleMining();
+        }
     }
 
     void PlayerMovements()

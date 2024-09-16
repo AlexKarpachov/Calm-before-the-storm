@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 150345767607841896}
   - component: {fileID: 6616773779345953343}
   - component: {fileID: 3551957265916053034}
+  - component: {fileID: 3306767258144215953}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -60,19 +61,22 @@ MonoBehaviour:
   - inventoryType: 2
     inventoryAmount: 0
   - inventoryType: 1
-    inventoryAmount: 0
+    inventoryAmount: 1
   - inventoryType: 3
-    inventoryAmount: 0
+    inventoryAmount: 1
   - inventoryType: 4
-    inventoryAmount: 0
+    inventoryAmount: 1
   - inventoryType: 5
     inventoryAmount: 0
   - inventoryType: 6
-    inventoryAmount: 0
+    inventoryAmount: 1
   - inventoryType: 7
-    inventoryAmount: 0
+    inventoryAmount: 1
   - inventoryType: 8
-    inventoryAmount: 0
+    inventoryAmount: 1
+  ToBuildPanel: {fileID: 0}
+  RequirementsPanel: {fileID: 0}
+  onBoardButton: {fileID: 0}
   axeAmount: {fileID: 0}
   pickAxeAmount: {fileID: 0}
   hammerAmount: {fileID: 0}
@@ -286,6 +290,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &3306767258144215953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821299854979999942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335331c996d91624d915157320c078fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {fileID: 0}
+  FoodCollectPanel: {fileID: 0}
+  characterController: {fileID: 150345767607841896}
 --- !u!1001 &3042229982021845373
 PrefabInstance:
   m_ObjectHideFlags: 0

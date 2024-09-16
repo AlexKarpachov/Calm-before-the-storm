@@ -6,24 +6,30 @@ public class TreeCutting : MonoBehaviour
     [SerializeField] int amountToAdd = 5;
     [SerializeField] Inventory inventory;
     [SerializeField] InventoryType inventoryType;
-    [SerializeField] GameObject axe;
+    [SerializeField] GameObject axePrefab;
 
     GameObject currentTree = null;
 
+    int axeRequired = 1;
     int currentHits = 0;
-    bool playerInTrigger = false;
+    public bool playerInTrigger = false;
 
     private void Start()
     {
-        axe.SetActive(false);
+        axePrefab.SetActive(false);
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Wood"))
+        int axe = inventory.GetCurrentInventory(InventoryType.Axe);
+
+        if (axe >= axeRequired)
         {
-            axe.SetActive(true);
-            playerInTrigger = true;
-            currentTree = other.gameObject;
+            if (other.gameObject.CompareTag("Wood"))
+            {
+                axePrefab.SetActive(true);
+                playerInTrigger = true;
+                currentTree = other.gameObject;
+            }
         }
     }
 
@@ -32,7 +38,7 @@ public class TreeCutting : MonoBehaviour
         if (other.gameObject.CompareTag("Wood"))
         {
             playerInTrigger = false;
-            axe.SetActive(false);
+            axePrefab.SetActive(false);
             currentHits = 0;
             currentTree = null;
         }
@@ -46,11 +52,11 @@ public class TreeCutting : MonoBehaviour
             if (currentHits >= requiredHits && currentTree != null)
             {
                 inventory.IncreaseCurrentInventory(inventoryType, amountToAdd);
-                Destroy(currentTree); 
-                currentTree = null; 
+                Destroy(currentTree);
+                currentTree = null;
                 currentHits = 0;
-                axe.SetActive(false);
-            }   
+                axePrefab.SetActive(false);
+            }
         }
     }
 }
